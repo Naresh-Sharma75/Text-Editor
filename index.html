@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script>
+        function textChange() {
+            var size = document.getElementById("inpRange").value;
+            var text=document.getElementById("txtArea");
+               text.style.fontSize=size+"px";
+        }
+        function colorChange() {
+            var txtColor = document.getElementById("inpColor").value;
+            var text=document.getElementById("txtArea");
+            text.style.color=txtColor;
+        }
+        function textBold(){
+            var bold=document.getElementById("txtArea")
+            bold.style.fontWeight="bold";
+            bold.style.fontStyle="normal";
+            bold.style.fontFamily="Arial";
+        }
+        function textitalic() {
+            var italic=document.getElementById("txtArea");
+            italic.style.fontStyle="italic"
+            italic.style.fontWeight="normal";
+            italic.style.fontFamily="Arial";
+        }
+        function textarial() {
+            var roman=document.getElementById("txtArea");
+            roman.style.fontFamily="Arial"
+            roman.style.fontWeight="normal";
+            roman.style.fontStyle="normal";
+        }
+        function txtLeft() {
+            var left=document.getElementById("txtArea");
+            left.style.textAlign="left"
+        }
+        function txtCenter() {
+            var center=document.getElementById("txtArea");
+            center.style.textAlign="center"
+        }
+        function txtRight() {
+            var right=document.getElementById("txtArea");
+            right.style.textAlign="right"
+        }
+    </script>
+</head>
+<body class="container-fluid" style="background-color: beige;">
+    <div class="container-fluid border border-dark border-3 mt-2 row w-100" id="box-1">
+        <div class="col border border-5 m-2">
+            <h3>Select font size</h3>
+            <input  class="form-range ps-2 pe-5" onchange="textChange()" value="16" type="range" min="10" max="150" id="inpRange">
+            <div class="d-flex justify-content-between pe-5"><span>1</span><span>7</span></div>
+        </div>
+        <div class="col border border-5 m-2">
+            <h3>Select font color</h3>
+            <input id="inpColor" onchange="colorChange()" type="color">
+        </div>
+        <div class="col border border-5 m-2">
+            <h3>Select font size</h3>
+            <div class="dropdown">
+                <button class="dropdown-toggle btn btn-dark" data-bs-toggle="dropdown">style</button>
+                <ul class="dropdown-menu">
+                <li class="dropdown-item"><b onclick="textBold()" id="inpBold">BOLD</b></li>
+                <li class="dropdown-item"><i onclick="textitalic()" id="inpItalic">italic</i></li>
+                <li class="dropdown-item"><span onclick="textarial()" id="inpArial">Arial</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col border border-5 m-2">
+        <h3>text-align</h3>
+        <button onclick="txtLeft()" class="bi bi-text-left btn btn-danger"></button>
+        <button onclick="txtCenter()" class="bi bi-text-center btn btn-info"></button>
+        <button onclick="txtRight()" class="bi bi-text-right btn btn-dark"></button>
+        </div>
+    </div>
+    <div class="m-3 mt-5">
+        <span>Text-Here:-</span>
+        <textarea name="" id="txtArea" class="w-100" placeholder="Page-1" rows="20">
+            
+        </textarea>
+    </div>
+</body>
+</html>
